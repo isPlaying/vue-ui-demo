@@ -39,9 +39,18 @@
       <v-button icon="setting">按钮</v-button>
       <v-button icon="download">按钮</v-button>
       <v-button>按钮</v-button>
-      <v-button icon="download" position="right" :loading="isLoading" @click="isLoading = !isLoading"
+      <v-button
+        icon="download"
+        position="right"
+        :loading="isLoading"
+        @click="isLoading = !isLoading"
         >Loading</v-button
       >
+      <v-button-group>
+        <v-button icon="left" positio="left">上一页</v-button>
+        <v-button>更多</v-button>
+        <v-button icon="right" position="right">下一页</v-button>
+      </v-button-group>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_2099617_le6pdupnmwa.js"></script>
