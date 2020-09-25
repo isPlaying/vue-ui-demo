@@ -27,39 +27,9 @@
         font-size: var(--font-size);
       }
     </style>
-    <style>
-      .v-button {
-        font-size: var(--font-size);
-        height: var(--button-height);
-        padding: 0 1em;
-        border-radius: var(--border-radius);
-        background: var(--button-bg);
-        border: 1px solid var(--border-color);
-      }
-      .v-button:hover {
-        border-color: var(--border-color-hover);
-      }
-      .v-button:active {
-        background-color: var(--button-active-bg);
-      }
-      .v-button:focus {
-        outline: none;
-      }
-  
-    </style>
   </head>
   <body>
     <div id="app"><v-button></v-button></div>
-
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="button.js"></script>
-    <script>
-      new Vue({
-        el: '#app',
-        data: {
-          message: 'hello world',
-        },
-      });
-    </script>
+    <script src="./src/app.js"></script>
   </body>
 </html>
