@@ -1,6 +1,7 @@
 <template>
   <button class="v-button" :class="{ [`icon-${position}`]: true }">
-    <v-icon v-if="icon" :name="icon" class="icon"></v-icon>
+    <v-icon v-if="icon && !loading" :name="icon" class="icon"></v-icon>
+    <v-icon v-if="loading" name="loading" class="loading icon"></v-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -11,6 +12,10 @@
 export default {
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     position: {
       type: String,
       default: "left",
@@ -23,6 +28,14 @@ export default {
 </script>
 
 <style lang="less">
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .v-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -59,6 +72,9 @@ export default {
     & > .content {
       order: 1;
     }
+  }
+  & > .loading {
+    animation: spin 1.5s infinite ease;
   }
 }
 </style>
